@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Capitol Hill Baptist Church Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Redesign to create a Single Page Web App for Capitol Hill Baptist Church
 
 ## Available Scripts
 

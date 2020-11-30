@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     width: "100%",
     backgroundColor: "grey",
     position: "absolute",
+    bottom: 0,
   },
 });
 
