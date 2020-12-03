@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  appbar: {
+    backgroundColor: "#0d47a1",
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -44,7 +47,7 @@ function MenuAppBar() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id={classes.appbar}>
       {/* <FormGroup>
         <FormControlLabel
           control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
