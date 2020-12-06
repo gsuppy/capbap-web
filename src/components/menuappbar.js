@@ -6,11 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+
+import firebase from "firebase";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,11 +32,22 @@ function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
+  
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
-
+  
+  const logout = () => {
+    handleClose();
+    firebase.auth().signOut()
+    .then(() => {
+      alert("Signed Out");
+    }, (error) => {
+      // An error happened
+      alert("An error has occurred");
+    });
+  };
+  
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -88,8 +98,8 @@ function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={logout}>Profile</MenuItem>
+                <MenuItem onClick={logout}>Logout</MenuItem>
               </Menu>
             </div>
           )}

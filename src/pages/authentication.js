@@ -12,7 +12,7 @@ const firebaseConfig = {
   measurementId: "G-JF4Q91091Y"
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const uiConfig = {
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -35,4 +35,4 @@ function Authentication() {
   );
 }
 
-export default Authentication; 
+export { Authentication, firebaseApp}; 

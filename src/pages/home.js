@@ -1,10 +1,10 @@
 function Home() {
   return (
   <div>
-    <div class="banner">
+    <div className="banner">
       <img src={process.env.PUBLIC_URL + "chbc.jpg"} alt=""></img>
     </div>
-    <div class="body-text">
+    <div className="body-text">
       <h4>
         Welcome to CapBap Web! This resource is here for you to learn about 
         the church and access any materials to strengthen your faith.

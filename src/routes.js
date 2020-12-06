@@ -12,8 +12,9 @@ import Pray from "./pages/pray";
 import Calendar from "./pages/calendar";
 import Contact from "./pages/contact";
 import Donate from "./pages/donate";
-import Authentication from "./pages/authentication";
 import Members from "./pages/members/members";
+import {Authentication, firebaseApp} from "./pages/authentication";
+import Logout from "./pages/members/logout";
 import Error from "./pages/error";
 
 // Routes for all the web pages
@@ -65,54 +66,77 @@ const Routes = [
   }
 ];
 
-const PrivateRoutes = [
-  {
-    auth: Auth(),
-    path: "/members",
-    exact: true,
-    main: () => <Members />
-  }
-]
+class RouteSwitches extends React.Component {
+  constructor(props) {
+    super(props);
+    this.uniqueIndex = 0;
+  };
 
-// Authenticates based on Firebase Auth
-function Auth() {
-  let auth = true;
-  //   setAuth(true);
-//   // if (FireBaseAuth) {
-//   //   setAuth(true);
-//   // } else {
-//   //   setAuth(false);
-//   // }
-  return auth;
-}
+  state = {
+    auth: undefined,
+  };
+  
+  componentDidMount() {
+    firebaseApp.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        this.setState({auth: true});
+      } else {
+        // No user is signed in.
+        this.setState({auth: false});
+      }
+    }.bind(this));
+  };
+  
+  render() {
+    let PrivateRoutes;
+    if (this.state.auth) {
+      PrivateRoutes = [
+        {
+          type: "Route",
+          path: "/members",
+          exact: true,
+          main: () => <Members />
+        }, 
+        {
+          type: "Route",
+          path: "/logout",
+          exact: true,
+          main: () => <Logout />
+        }
+      ];
+    } else {
+      PrivateRoutes = [
+        {
+          type: "Redirect",
+          path: "/error",
+          exact: true,
+          main: () => <Error />
+        }
+      ];
+    };
 
-function RouteSwitches() {
-
-  return(
-    <Switch>
-    {Routes.map((route, index) => (
-      <Route
-        key={index}
-        path={route.path}
-        exact={route.exact}
-        children={route.main}
-      />
-    ))}
-    {
-      PrivateRoutes.map((route, index) => (
-        route.auth ? 
+    return(
+      <Switch>
+      {Routes.map((route) => (
         <Route
-          key={index}
-          path={route.auth ? route.path : "/error"}
+          key={this.uniqueIndex++}
+          path={route.path}
           exact={route.exact}
-          children={route.auth ? route.main : () => <Error />}
+          children={route.main}
         />
-        :
-        <Redirect to="/error"></Redirect>
-      ))
-    }
-  </Switch>
-  );
+      ))}
+      {PrivateRoutes.map((route) => (
+        <Route
+          key={this.uniqueIndex++}
+          path={route.path}
+          exact={route.exact}
+          children={route.main}
+        /> 
+      ))}
+    </Switch>
+    );
+  }
 };
 
 export default RouteSwitches;
