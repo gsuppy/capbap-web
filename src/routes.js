@@ -2,8 +2,10 @@ import React from "react";
 import {
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
+import {Elements} from "@stripe/react-stripe-js";
+import {loadStripe} from '@stripe/stripe-js';
 
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -16,6 +18,8 @@ import Members from "./pages/members/members";
 import {Authentication, firebaseApp} from "./pages/authentication";
 import Logout from "./pages/members/logout";
 import Error from "./pages/error";
+
+const stripePromise = loadStripe("pk_test_51HwaJpDpclwZ4hsd3wQnUVcTq787XdFOSziRKaPfryyp0doaC7SpZ9m3UXiKlWgdrGOsmox12yaHLtxbTijevUsT003k3meohq    ");
 
 // Routes for all the web pages
 const Routes = [
@@ -52,7 +56,7 @@ const Routes = [
   {
     path: "/donate",
     exact: true,
-    main: () => <Donate />
+    main: () => <Elements stripe={stripePromise}><Donate /></Elements>
   },  
   {
     path: "/contact",

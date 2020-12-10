@@ -2,13 +2,13 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import HomeIcon from '@material-ui/icons/Home';
-import InfoIcon from '@material-ui/icons/Info';
-import HearingIcon from '@material-ui/icons/Hearing';
-import PeopleIcon from '@material-ui/icons/People';
-import EventIcon from '@material-ui/icons/Event';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
+import HomeIcon from "@material-ui/icons/Home";
+import InfoIcon from "@material-ui/icons/Info";
+import HearingIcon from "@material-ui/icons/Hearing";
+import PeopleIcon from "@material-ui/icons/People";
+import EventIcon from "@material-ui/icons/Event";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({

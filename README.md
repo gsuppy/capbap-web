@@ -1,8 +1,18 @@
 # Capitol Hill Baptist Church Web App
 
-Redesign to create a Single Page Web App for Capitol Hill Baptist Church
+This is a progressive single page app bootstrapped using Create-React-App. If you would like to run this code locally on your computer, please run `yarn start` from the root of the capbap-web directory.
 
-## Available Scripts
+Deverloper: Kevin (Ji Seup) Kim done for a CS50 Final Project
+
+##Libraries and APIS used:
+-React
+-React Material UI
+-React Calendar
+-Firebase (Auth, Firestore)
+-Stripe
+-Castbox FM Podcast Integration
+
+## Available Scripts (Documentation available from Create-React-App)
 
 In the project directory, you can run:
 

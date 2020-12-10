@@ -27,15 +27,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// This is the top menu bar on the page
 function MenuAppBar() {
   const classes = useStyles();
+  // Use this to toggle member only access 
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
   
   const logout = () => {
     handleClose();
@@ -58,17 +56,12 @@ function MenuAppBar() {
 
   return (
     <div className={classes.root} id={classes.appbar}>
-      {/* <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup> */}
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          {/* TODO: Finish populating a members only navigation */}
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography variant="h6" className={classes.title}>
             Capitol Hill Baptist Church
           </Typography>
@@ -98,7 +91,7 @@ function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={logout}>Profile</MenuItem>
+                {/* <MenuItem onClick={logout}>Profile</MenuItem> */}
                 <MenuItem onClick={logout}>Logout</MenuItem>
               </Menu>
             </div>
