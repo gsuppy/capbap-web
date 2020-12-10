@@ -1,18 +1,24 @@
 # Capitol Hill Baptist Church Web App
 
-This is a progressive single page app bootstrapped using Create-React-App. If you would like to run this code locally on your computer, please run `yarn start` from the root of the capbap-web directory.
+This is a progressive single page app bootstrapped using Create-React-App. The hope was to create an app for members of my church so they could better interact with one another, especially during this time of COVID-19. Obviously, creating an entire web app with multiple complex elements is not an easy feat and I was not able to complete everything, mainly the members only section (you can still explore the menu below without technically logging into it).
 
-Deverloper: Kevin (Ji Seup) Kim done for a CS50 Final Project
+If you would like to run this code locally on your computer, please run `yarn start` from the root of the capbap-web directory.
 
-##Libraries and APIS used:
--React
--React Material UI
--React Calendar
--Firebase (Auth, Firestore)
--Stripe
--Castbox FM Podcast Integration
+Or if you would like to access via your browser, navigate to https://capbap-web.herokuapp.com/
 
-## Available Scripts (Documentation available from Create-React-App)
+# Explore the App
+
+## Login
+
+Please login via email, Google, or Facebook account. This will technically give you access to the /members page, but that is still a WIP. You can manually navigate to /members to check if your login was successful. The profile button on the top right allows you to click on it and logout if you wish. Additional profile settings are WIP.
+
+## Pages - Home, About, Liste, Pray, Calendar, Donate, Contact
+
+The home, about, and contact pages are mainly static pages taken from details of the existing website for my church.
+
+##
+
+# Available Scripts (Documentation available from Create-React-App)
 
 In the project directory, you can run:
 
@@ -38,43 +44,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
