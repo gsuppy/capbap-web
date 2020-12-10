@@ -8,15 +8,25 @@ Or if you would like to access via your browser, navigate to https://capbap-web.
 
 # Explore the App
 
+Many of the elements were incorporated with the help of styling from React Material UI.
+
 ## Login
 
 Please login via email, Google, or Facebook account. This will technically give you access to the /members page, but that is still a WIP. You can manually navigate to /members to check if your login was successful. The profile button on the top right allows you to click on it and logout if you wish. Additional profile settings are WIP.
 
-## Pages - Home, About, Liste, Pray, Calendar, Donate, Contact
+## Pages - Home, About, Listen, Pray, Calendar, Donate, Contact
 
-The home, about, and contact pages are mainly static pages taken from details of the existing website for my church.
+The home, about, and contact pages are mainly static pages taken from details of the existing website for my church. Most of that will not be very interesting from a technical perspective, but all of the pages can be navigated to by clicking out the appbar menu on the bottom of the page.
 
-##
+Listen integrates with the Castbox FM iFrame that is available to stream sermons from our church.
+
+Calendar is an integration of React Calendar. Unfortunately, no real church events have been imported yet, so that is a WIP.
+
+Pray is a custom made bulletein board of sorts that dynamically takes the name of the user logged in (if you logged in via Firebase Auth) and allows you to post a prayer request for anyone else to read.
+
+## WIP Pages - Members
+
+In the source code, you can see that there is a pages/members directory with many WIP pages that I was planning for members only. Those are WIP and hopefully will be finished for a members only section after successful authentication.
 
 # Available Scripts (Documentation available from Create-React-App)
 
